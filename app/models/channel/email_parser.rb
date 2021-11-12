@@ -201,6 +201,8 @@ returns
       end
 
       # set ticket state to open if not new
+      # 2021-11-12: uli CHANGED
+      # set ticket state to open if closed
       if ticket
         set_attributes_by_x_headers(ticket, 'ticket', mail, 'followup')
 
@@ -209,8 +211,9 @@ returns
 
         # set ticket to open again or keep create state
         if !mail[:'x-zammad-ticket-followup-state'] && !mail[:'x-zammad-ticket-followup-state_id']
-          new_state = Ticket::State.find_by(default_create: true)
-          if ticket.state_id != new_state.id && !mail[:'x-zammad-out-of-office']
+          #new_state = Ticket::State.find_by(default_create: true)
+          closed_state = Ticket::State.lookup(name: 'closed')
+          if ticket.state_id == closed_state.id && !mail[:'x-zammad-out-of-office']
             ticket.state = Ticket::State.find_by(default_follow_up: true)
             ticket.save!
           end
