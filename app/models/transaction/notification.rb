@@ -106,10 +106,10 @@ class Transaction::Notification
       channels = item[:channels]
 
       # ignore user who changed it by him self via web
-      if @params[:interface_handle] == 'application_server'
-        next if article&.updated_by_id == user.id
-        next if !article && @item[:user_id] == user.id
-      end
+      #if @params[:interface_handle] == 'application_server'
+      #  next if article&.updated_by_id == user.id
+      #  next if !article && @item[:user_id] == user.id
+      #end
 
       # ignore inactive users
       next if !user.active?
