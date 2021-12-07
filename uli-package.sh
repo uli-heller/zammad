@@ -1,7 +1,9 @@
 #!/bin/sh
 BN="$(basename "$0")"
+D="$(dirname "$0")"
+D="$(cd "${D}" && pwd)"
 GITHUB_REMOTE=origin
-GITHUB_USER="$(git remote get-url "${GITHUB_REMOTE}"|sed -e 's/^[^:]*://' -e 's,/.*$,,')"
+GITHUB_USER="$({ cd "${D}" && git remote get-url "${GITHUB_REMOTE}"; }|sed -e 's/^[^:]*://' -e 's,/.*$,,')"
 GITHUB_PUBKEY="$(curl -sq "https://github.com/${GITHUB_USER}.keys")"
 
 TMPDIR="/tmp/${BN}-$(openssl rand -hex 20).$$~"
