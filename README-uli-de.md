@@ -20,4 +20,4 @@ Von diesen Ständen erzeuge ich dann
 - eine SHA256-Datei - bspw. zammad-5.0.3u28.tar.bz2.sha256
 - eine SSH-SIG-Datei - bspw. zammad-5.0.3u28.tar.bz2.ssh-sig
 
-Alle diese Artefakte werden dann aufmGithub veröffentlicht.
+Alle diese Artefakte werden dann auf Github veröffentlicht.
