@@ -14,7 +14,8 @@ cleanUp () {
 
 trap cleanUp 0 1 2 3 4 5 6 7 8 9 10 12 13 14 15
 
-VERSION="$(git describe --tags "$(git rev-list --tags --max-count=1)")"
+#VERSION="$(git describe --tags "$(git rev-list --tags --max-count=1)")"
+VERSION="$(git describe --tags "$(git rev-list HEAD~1..HEAD)")"
 git clean -f
 git archive --format=tar "${VERSION}"|bzip2 -c9 >zammad-${VERSION}.tar.bz2
 sha256sum zammad-${VERSION}.tar.bz2 >zammad-${VERSION}.tar.bz2.sha256
