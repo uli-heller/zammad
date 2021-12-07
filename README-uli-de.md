@@ -21,3 +21,23 @@ Von diesen Ständen erzeuge ich dann
 - eine SSH-SIG-Datei - bspw. zammad-5.0.3u28.tar.bz2.ssh-sig
 
 Alle diese Artefakte werden dann auf Github veröffentlicht.
+
+## Upstream-Version
+
+```
+./uli-release 5.0.3
+# Erzeugt:
+#  zammad-5.0.3.tar.bz2
+#  zammad-5.0.3.tar.bz2.sha256
+#  zammad-5.0.3.tar.bz2.ssh-sig
+```
+
+## Uli-Version
+
+```
+./uli-release.sh 5.0.3u28
+# Erzeugt:
+#  zammad-5.0.3u28.tar.bz2
+#  zammad-5.0.3u28.tar.bz2.sha256
+#  zammad-5.0.3u28.tar.bz2.ssh-sig
+```
