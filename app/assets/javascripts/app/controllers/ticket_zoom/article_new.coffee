@@ -133,9 +133,9 @@ class App.TicketZoomArticleNew extends App.Controller
 
   setPossibleArticleTypes: =>
     @articleTypes = [ 'email' ]
-    // for config in @actions()
-    //   if config && config.articleTypes
-    //     @articleTypes = config.articleTypes(@articleTypes, @ticket, @)
+    # for config in @actions()
+    #   if config && config.articleTypes
+    #     @articleTypes = config.articleTypes(@articleTypes, @ticket, @)
 
   placeCaretAtEnd: (el) ->
     el.focus()
