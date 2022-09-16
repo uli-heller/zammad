@@ -132,10 +132,10 @@ class App.TicketZoomArticleNew extends App.Controller
     App.Utils.tokanice('.content.active .js-to, .js-cc, js-bcc', type)
 
   setPossibleArticleTypes: =>
-    @articleTypes = []
-    for config in @actions()
-      if config && config.articleTypes
-        @articleTypes = config.articleTypes(@articleTypes, @ticket, @)
+    @articleTypes = [ 'email' ]
+    // for config in @actions()
+    //   if config && config.articleTypes
+    //     @articleTypes = config.articleTypes(@articleTypes, @ticket, @)
 
   placeCaretAtEnd: (el) ->
     el.focus()
