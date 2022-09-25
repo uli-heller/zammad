@@ -41,7 +41,9 @@ TBD
 
 ### Neuigkeiten übernehmen
 
-- Aktuellen Stand ermitteln: `git describe --tags` -> 5.2.2u070
+- Aktuellen Stand ermitteln: `git describe --tags`
+  - Guter Stand: 5.2.2u070
+  - Unklarer Stand: 5.2.2u070-1-g68ef2fec5 - Markierung ist veraltet
 - Neuen Stand festlegen:
   - **5.2.2u071**
   - 5.3.0u071
