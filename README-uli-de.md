@@ -22,6 +22,36 @@ Von diesen Ständen erzeuge ich dann
 
 Alle diese Artefakte werden dann auf Github veröffentlicht.
 
+## Aktualisierung auf eine neue Upstream-Version
+
+### Neuigkeiten ermitteln
+
+#### Keine Neuigkeiten
+
+```
+$ git fetch --all
+Fordere an von origin
+Fordere an von upstream
+Fordere an von mattk42
+```
+
+#### Neuigkeiten vorhanden
+
+TBD
+
+### Neuigkeiten übernehmen
+
+- Aktuellen Stand ermitteln: `git describe --tags` -> 5.2.2u070
+- Neuen Stand festlegen:
+  - **5.2.2u071**
+  - 5.3.0u071
+- Änderungen einbinden: `git rebase upstream/stable`
+- Neuen Stand markieren: `git tag 5.2.2u071`
+- Neuen Stand sichern:
+  - `git push --tags`
+  - `git push -f`
+- Neue Version erzeugen: `./uli-release.sh 5.2.2u071`
+
 ## Upstream-Version
 
 ```
