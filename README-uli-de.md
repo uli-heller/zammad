@@ -37,7 +37,21 @@ Fordere an von mattk42
 
 #### Neuigkeiten vorhanden
 
-TBD
+```
+$ git fetch --all
+Fordere an von origin
+Fordere an von upstream
+remote: Enumerating objects: 333, done.
+remote: Counting objects: 100% (333/333), done.
+remote: Compressing objects: 100% (86/86), done.
+remote: Total 333 (delta 251), reused 325 (delta 245), pack-reused 0
+Empfange Objekte: 100% (333/333), 2.71 MiB | 4.28 MiB/s, fertig.
+Löse Unterschiede auf: 100% (251/251), abgeschlossen mit 67 lokalen Objekten.
+Von github.com:zammad/zammad
+   6a0d3f356..d452b0184  develop    -> upstream/develop
+   7dadccdea..eb9780155  stable     -> upstream/stable
+Fordere an von mattk42
+```
 
 ### Neuigkeiten übernehmen
 
