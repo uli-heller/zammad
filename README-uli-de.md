@@ -53,13 +53,33 @@ Von github.com:zammad/zammad
 Fordere an von mattk42
 ```
 
+#### Neuigkeiten vorhanden mit neuem Zweig
+
+```
+$ git fetch --all
+Fordere an von origin
+Fordere an von upstream
+remote: Enumerating objects: 247, done.
+remote: Counting objects: 100% (244/244), done.
+remote: Compressing objects: 100% (41/41), done.
+remote: Total 133 (delta 99), reused 116 (delta 82), pack-reused 0
+Empfange Objekte: 100% (133/133), 16.56 KiB | 16.56 MiB/s, fertig.
+Löse Unterschiede auf: 100% (99/99), abgeschlossen mit 68 lokalen Objekten.
+Von github.com:zammad/zammad
+   48933cfac..ae2c5244f  develop    -> upstream/develop
+   bca422439..65550ad83  stable     -> upstream/stable
+ * [neues Tag]           5.2.3      -> 5.2.3
+Fordere an von mattk42
+```
+
 ### Neuigkeiten übernehmen
 
 - Aktuellen Stand ermitteln: `git describe --tags`
   - Guter Stand: 5.2.2u070
   - Unklarer Stand: 5.2.2u070-1-g68ef2fec5 - Markierung ist veraltet
-- Neuen Stand festlegen:
+- Neuen Stand festlegen - je nachdem, ob ein neuer Zweig vorhanden ist:
   - **5.2.2u071**
+  - 5.2.3u071
   - 5.3.0u071
 - Änderungen einbinden: `git rebase upstream/stable`
 - Neuen Stand markieren: `git tag 5.2.2u071`
