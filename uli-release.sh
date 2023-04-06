@@ -1,4 +1,5 @@
 #!/bin/sh
+#set -x
 BN="$(basename "$0")"
 D="$(dirname "$0")"
 D="$(cd "${D}" && pwd)"
