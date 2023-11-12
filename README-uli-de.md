@@ -158,6 +158,45 @@ Hinweis: "git add/rm <conflicted_files>", then run "git rebase --continue".
 Hinweis: You can instead skip this commit: run "git rebase --skip".
 Hinweis: To abort and get back to the state before "git rebase", run "git rebase --abort".
 Konnte 7416b4c53... (Maintenance: Translations update from translations.zammad.org.) nicht anwenden
+
+#
+# Alles zurückdrehen!
+#
+$ git rebase --abort
+$ git branch -m stable-6.1 stable-5.4
+$ git push -u origin stable-5.4:stable-5.4
+$ git push origin :stable-6.1
+
+#
+# stable-6.1 anlegen
+#
+$ git checkout -b stable-6.1 upstream/stable
+$ git push -u origin stable-6.1:stable-6.1
+$ git cherry-pick upstream/stable-5.4..stable-5.4
+[stable-6.1 55422accb] Skript zum Packetieren
+ Date: Thu Mar 25 07:53:31 2021 +0100
+ 1 file changed, 5 insertions(+)
+ create mode 100755 uli-package.sh
+[stable-6.1 79b62dcfc] Add sha256sum
+ Date: Fri Oct 8 08:28:08 2021 +0200
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+automatischer Merge von app/models/channel/email_parser.rb
+...
+[stable-6.1 3ee1b0371] Rebase-Probleme mit 6.1
+ Date: Sun Nov 12 09:47:33 2023 +0100
+ 1 file changed, 23 insertions(+), 1 deletion(-)
+
+$ git push
+Objekte aufzählen: 80, fertig.
+Zähle Objekte: 100% (80/80), fertig.
+Delta-Kompression verwendet bis zu 16 Threads.
+Komprimiere Objekte: 100% (61/61), fertig.
+Schreibe Objekte: 100% (71/71), 17.30 KiB | 17.30 MiB/s, fertig.
+Gesamt 71 (Delta 64), Wiederverwendet 12 (Delta 10), Pack wiederverwendet 0
+remote: Resolving deltas: 100% (64/64), completed with 9 local objects.
+To github.com:uli-heller/zammad.git
+   4747590e4..3ee1b0371  stable-6.1 -> stable-6.1
+
 ```
 
 ## Upstream-Version
