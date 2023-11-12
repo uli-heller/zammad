@@ -88,6 +88,56 @@ Fordere an von mattk42
   - `git push -f`
 - Neue Version erzeugen: `./uli-release.sh 5.2.2u071`
 
+### Für 6.1.0
+
+Neuen Stand herholen von Github:
+
+```
+$ git fetch --all
+Fordere an von origin
+Fordere an von upstream
+remote: Enumerating objects: 5643, done.
+remote: Counting objects: 100% (3802/3802), done.
+remote: Compressing objects: 100% (1265/1265), done.
+remote: Total 5643 (delta 2637), reused 3593 (delta 2468), pack-reused 1841
+Empfange Objekte: 100% (5643/5643), 28.38 MiB | 4.81 MiB/s, fertig.
+Löse Unterschiede auf: 100% (3493/3493), abgeschlossen mit 382 lokalen Objekten.
+Von github.com:zammad/zammad
+   1da038011..2cce72283  develop                              -> upstream/develop
+ * [neuer Branch]        develop-docker-tags                  -> upstream/develop-docker-tags
+ + 207343b96...d865102a3 develop_ts_maintenance_pkg-installer -> upstream/develop_ts_maintenance_pkg-installer  (Aktualisierung erzwungen)
+ + bcb37f95b...4747590e4 stable                               -> upstream/stable  (Aktualisierung erzwungen)
+ * [neuer Branch]        stable-6.0                           -> upstream/stable-6.0
+ * [neuer Branch]        stable-mh-issue4816                  -> upstream/stable-mh-issue4816
+ * [neues Tag]           6.1.0                                -> 6.1.0
+ * [neues Tag]           6.2.0-alpha                          -> 6.2.0-alpha
+Fordere an von mattk42
+```
+
+Ich erkenne:
+
+- Es gibt ein neues Tag "6.1.0"
+- Es gibt einen neuen Branch "stable-6.0"
+- Es gibt Änderungen am Branch "stable"
+- Mittels `gitk` ermitteln: "stable" baut auf auf "6.1.0"
+
+Also: Wir brauchen einen neuen Branch "stable-6.1" statt "stable-5.4" wie bisher.
+
+```
+$ git branch -m stable-5.4 stable-6.1
+$ git push -u origin stable-6.1:stable-6.1
+Gesamt 0 (Delta 0), Wiederverwendet 0 (Delta 0), Pack wiederverwendet 0
+remote: 
+remote: Create a pull request for 'stable-6.1' on GitHub by visiting:
+remote:      https://github.com/uli-heller/zammad/pull/new/stable-6.1
+remote: 
+To github.com:uli-heller/zammad.git
+ * [new branch]          stable-6.1 -> stable-6.1
+Branch 'stable-6.1' folgt nun 'origin/stable-6.1'.
+
+$
+```
+
 ## Upstream-Version
 
 ```
