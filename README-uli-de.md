@@ -135,7 +135,29 @@ To github.com:uli-heller/zammad.git
  * [new branch]          stable-6.1 -> stable-6.1
 Branch 'stable-6.1' folgt nun 'origin/stable-6.1'.
 
-$
+$ git rebase upstream/stable
+Warnung: zuvor angewendeten Commit 7f28bf522 übersprungen
+Warnung: zuvor angewendeten Commit 7e73bd789 übersprungen
+Warnung: zuvor angewendeten Commit 8d706a0b0 übersprungen
+...
+Warnung: zuvor angewendeten Commit b4371d8cd übersprungen
+Warnung: zuvor angewendeten Commit d074a0f4b übersprungen
+Hinweis: verwenden Sie --reapply-cherry-picks, um übersprungene Commits einzubeziehen
+Hinweis: Disable this message with "git config advice.skippedCherryPicks false"
+automatischer Merge von i18n/zammad.am.po
+KONFLIKT (Inhalt): Merge-Konflikt in i18n/zammad.am.po
+automatischer Merge von i18n/zammad.ar.po
+KONFLIKT (Inhalt): Merge-Konflikt in i18n/zammad.ar.po
+...
+KONFLIKT (Inhalt): Merge-Konflikt in i18n/zammad.zh-cn.po
+automatischer Merge von i18n/zammad.zh-tw.po
+KONFLIKT (Inhalt): Merge-Konflikt in i18n/zammad.zh-tw.po
+Fehler: Konnte 7416b4c53... (Maintenance: Translations update from translations.zammad.org.) nicht anwenden
+Hinweis: Resolve all conflicts manually, mark them as resolved with
+Hinweis: "git add/rm <conflicted_files>", then run "git rebase --continue".
+Hinweis: You can instead skip this commit: run "git rebase --skip".
+Hinweis: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Konnte 7416b4c53... (Maintenance: Translations update from translations.zammad.org.) nicht anwenden
 ```
 
 ## Upstream-Version
