@@ -197,6 +197,9 @@ remote: Resolving deltas: 100% (64/64), completed with 9 local objects.
 To github.com:uli-heller/zammad.git
    4747590e4..3ee1b0371  stable-6.1 -> stable-6.1
 
+$ git tag 6.1.0u087
+$ git push --tags
+$ ./uli-release.sh 6.1.0u087
 ```
 
 ## Upstream-Version
