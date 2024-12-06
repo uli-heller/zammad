@@ -81,11 +81,20 @@ Fordere an von mattk42
   - **5.2.2u071**
   - 5.2.3u071
   - 5.3.0u071
-- Änderungen einbinden: `git rebase upstream/stable`
+- Änderungen einbinden:
+  - Bislang: `git rebase upstream/stable`
+  - Künftig:
+    - `git checkout stable-6.0`
+    - `git checkout -b next-stable-6.0 stable-5.4`
+    - `git rebase --onto stable-6.0 upstream/stable-5.4 next-stable-6.0`
+    - `git checkout stable-6.0`
+    - `git rebase next-stable-6.0`
+    - `git push -u origin stable-6.0`
+    - `git branch -d next-stable-6.0`
 - Neuen Stand markieren: `git tag 5.2.2u071`
 - Neuen Stand sichern:
   - `git push --tags`
-  - `git push -f`
+  - `git push`
 - Neue Version erzeugen: `./uli-release.sh 5.2.2u071`
 
 ### Für 6.1.0
