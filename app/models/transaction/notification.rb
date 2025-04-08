@@ -152,8 +152,8 @@ class Transaction::Notification
     user     = recipient_settings[:user]
     channels = recipient_settings[:channels]
 
-    # ignore user who changed it by him self via web
-    return if recipient_myself?(user)
+    ## ignore user who changed it by him self via web
+    #return if recipient_myself?(user)
 
     # ignore inactive users
     return if !user.active?
